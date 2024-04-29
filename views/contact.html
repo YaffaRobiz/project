@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
+    <title>Contact</title>
     <style>
         * {
             margin: 0;
@@ -82,24 +82,37 @@
         }
 
         h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
             color: rgba(13, 81, 133, 0.6);
         }
+       
+
     </style>
 </head>
 
 <body>
-    <div style="padding: 20px;">
-        <h1>Whoops!</h1>
-        <div style="margin-top: 20px;">
-        <p>Seems like this page does not exist</p>
-        <button id="backButton" class="btn">Go back</button>
-        <script type="text/javascript">
-            document.getElementById("backButton").onclick = function () {
-                history.back();
-            };
-        </script>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="rightNav">
+            <input type="text" name="search" id="search" placeholder="Search someone">
+            <button class="btn btn-sm">Search</button>
         </div>
+    </nav>
+
+    <div>
+        <h1>Contact us</h1>
+      
+        <p>
+            <a href="mailto:memor-e@gmail.com">Send us an email</a>
+        </p>
     </div>
+
+
 </body>
 
 </html>
