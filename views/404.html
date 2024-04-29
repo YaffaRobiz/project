@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .btn {
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background-color: #000;
+            /* Change the background color on hover */
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color:rgba(18, 146, 165, 0.6);">Whoops!</h1>
+    <p>Seems like this page does not exist</p>
+    <button id="backButton" class="btn">Go back</button>
+    <script type="text/javascript">
+        document.getElementById("backButton").onclick = function () {
+            location.href = "/";
+        };
+    </script>
+</body>
+</html>
