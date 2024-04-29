@@ -15,56 +15,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        .navbar {
-            display: flex;
-            position: sticky;
-            align-items: center;
-            justify-content: space-between;
-            top: 0px;
-            background: rgba(13, 81, 133, 0.6);
-            background-blend-mode: darken;
-            background-size: cover;
-            color: white;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-        }
-
-        .nav-list {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-list li {
-            margin-right: 20px;
-        }
-
-        .nav-list li:last-child {
-            margin-right: 0;
-        }
-
-        .nav-list li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .nav-list li a:hover {
-            color: #ffd700;
-            /* Change the color on hover */
-        }
-
-        .rightNav {
-            text-align: right;
-        }
-
-        #search {
-            padding: 8px;
-            font-size: 16px;
-            border: 2px solid #fff;
-            border-radius: 5px;
-        }
-
         .btn {
             background-color: #ffd700;
             color: #000;
@@ -80,9 +30,24 @@
             /* Change the background color on hover */
             color: #ffd700;
         }
-
         h1 {
+            margin: 20px;
             color: rgba(13, 81, 133, 0.6);
+        }
+
+        p {
+           margin: 20px;
+        }
+        
+        .footer {
+            background-color:rgba(13, 81, 133, 0.6);
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            color: white;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -99,6 +64,11 @@
             };
         </script>
         </div>
+    </div>
+    <div class="footer">
+        <p>
+            © All rights reserved 
+        </p>
     </div>
 </body>
 
