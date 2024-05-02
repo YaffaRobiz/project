@@ -76,6 +76,7 @@ body {
 h1 {
     margin: 20px;
     color: rgba(13, 81, 133, 0.6);
+    text-align: center;
 }
 
 p {
@@ -92,3 +93,49 @@ p {
     color: white;
     font-size: 12px;
 }
+
+.accordion {
+    background-color:rgba(13, 81, 133, 0.6);
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-family: 'Franklin Gothic Medium';
+    border-radius: 5px;
+    font-size: 22px;
+    
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #e4e2e2c0;
+    font-family: 'Franklin Gothic Medium';
+    color: rgba(13, 81, 133, 0.6);
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    font-family: 'Franklin Gothic Medium';
+    font-weight: 100;
+
+  }
+
+  #accordionComponent{
+    margin: 75px;
+    
+  }
+  
+  .logo{
+    border-radius: 10px;
+    height: 150px;
+    width: 200px;
+  }

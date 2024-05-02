@@ -6,6 +6,8 @@ router.get('/contact',(req,res,next)=>{
    res.sendFile(path.join(__dirname,'../','views','contact.html'))});
 router.get('/about-us',(req,res,next)=>{
     res.sendFile(path.join(__dirname,'../','views','about-us.html'))});
+    router.get('/Q&A',(req,res,next)=>{
+      res.sendFile(path.join(__dirname,'../','views','Q&A.html'))});
  router.get('/',(req,res,next)=>{
     res.sendFile(path.join(__dirname,'../','views','index.html'))});
  router.use((req,res,next)=>{
