@@ -1,15 +1,14 @@
-const path=require('path');
-const express=require('express');
-const router=express.Router();
+const express = require('express');
+const bodyParser = require('body-parser');
+const siteController = require("../controllers/memore.js");
+const router = express.Router();
 
-router.get('/contact',(req,res,next)=>{
-   res.sendFile(path.join(__dirname,'../','views','contact.html'))});
-router.get('/about-us',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'../','views','about-us.html'))});
-    router.get('/Q&A',(req,res,next)=>{
-      res.sendFile(path.join(__dirname,'../','views','Q&A.html'))});
- router.get('/',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'../','views','index.html'))});
- router.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname,'../','views','404.html'))});
- module.exports=router;
+router.use(bodyParser.urlencoded({ extended: false }));
+
+router.get('/', siteController.getIndex);
+router.get('/about-us', siteController.getAboutUs);
+router.get('/Q&A', siteController.getQA);
+router.get('/contact', siteController.getContact);
+router.get('*', siteController.getError);
+
+module.exports = router;

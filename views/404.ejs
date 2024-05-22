@@ -1,0 +1,19 @@
+<%- include('includes/head.ejs') %>
+<title>404</title>
+</head>
+
+<body>
+    <%- include('includes/menu.ejs') %>
+    <div>
+        <h1>Whoops!</h1>
+        <div>
+        <p>Seems like this page does not exist</p>
+        <button id="backButton" class="btn">Go back</button>
+        <script type="text/javascript">
+            document.getElementById("backButton").onclick = function () {
+                history.back();
+            };
+        </script>
+        </div>
+    </div>
+    <%- include('includes/end.ejs') %>
