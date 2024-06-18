@@ -4,76 +4,96 @@
 
   <body>
     <%- include('includes/menu.ejs') %>
-      <h1>Memor-E</h1>
-      <h2>אתר זיכרון שיתופי</h2>
-      <section aria-label="Newest Pages">
-        <div class="carousel" data-carousel>
-          <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-          <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
-            <ul data-slides>
-              <li class="slide" data-active>
-                <div class="textbox">
-                  <p>
-                  אלון ורבר
-                  <br>
-                  2023 - 1997
-                  <br>
-                  רעננה
-                  <br>
-                  <a class="memoreLink" href="#">מעבר לזיכרון</a>
-                </p>
-                </div>
-                <img src="/images/Alon_Werber.jpg" alt="אלון ורבר">
-              </li>
-              <li class="slide">
-                <div class="textbox">
-                  <p>
-                  גיא אילוז
-                  <br>
-                  2023 - 1997
-                  <br>
-                  רעננה
-                  <br>
-                  <a class="memoreLink" href="#">מעבר לזיכרון</a>
-                </p>
-                </div>
-                <img src="/images/Guy_Illouz.jpg" alt="גיא אילוז">
-              </li><li class="slide">
-                <div class="textbox">
-                  <p>
-                  קטרינה טבגן גולדמן
-                  <br>
-                  2023 - 1997
-                  <br>
-                  חולון
-                  <br>
-                  <a class="memoreLink" href="#">מעבר לזיכרון</a>
-                </p>
-                </div>
-                <img src="/images/Katherina Goldman.jpg" alt="קטרינה טבגן גולדמן">
-              </li>
-            </ul>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Memor-E</h1>
+          <h2>אתר זיכרון שיתופי</h2>
         </div>
       </section>
+
+      <main>
+        <div class="carousel">
+          <div class="carousel-item">
+            <img src="/images/Alon_Werber.jpg" alt="אלון ורבר">
+            <div class="textbox">
+              <p class="memore-text">
+                אלון ורבר
+                <br>
+                2023 - 1997
+                <br>
+                רעננה
+                <br>
+                <a class="memoreLink" href="#">מעבר לזיכרון</a>
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/images/Guy_Illouz.jpg" alt="גיא אילוז">
+            <div class="textbox">
+              <p class="memore-text">
+                גיא אילוז
+                <br>
+                2023 - 1997
+                <br>
+                רעננה
+                <br>
+                <a class="memoreLink" href="#">מעבר לזיכרון</a>
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/images/Katherina Goldman.jpg" alt="קטרינה טבגן גולדמן">
+            <div class="textbox">
+              <p class="memore-text">
+                קטרינה טבגן גולדמן
+                <br>
+                2023 - 1997
+                <br>
+                חולון
+                <br>
+                <a class="memoreLink" href="#">מעבר לזיכרון</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
       <script>
-        const buttons = document.querySelectorAll("[data-carousel-button]")
+        let carouselItems = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
 
-        buttons.forEach(button => {
-          button.addEventListener("click", () => {
-            const offset = button.dataset.carouselButton === "next" ? 1 : -1
-            const slides = button
-              .closest("[data-carousel]")
-              .querySelector("[data-slides]")
+        function showItem(index) {
+          carouselItems.forEach((item, i) => {
+            if (i === index) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
 
-            const activeSlide = slides.querySelector("[data-active]")
-            let newIndex = [...slides.children].indexOf(activeSlide) + offset
-            if (newIndex < 0) newIndex = slides.children.length - 1
-            if (newIndex >= slides.children.length) newIndex = 0
+        function nextItem() {
+          currentIndex++;
+          if (currentIndex >= carouselItems.length) {
+            currentIndex = 0;
+          }
+          showItem(currentIndex);
+        }
 
-            slides.children[newIndex].dataset.active = true
-            delete activeSlide.dataset.active
-          })
-        })
+        function prevItem() {
+          currentIndex--;
+          if (currentIndex < 0) {
+            currentIndex = carouselItems.length - 1;
+          }
+          showItem(currentIndex);
+        }
+
+
+        showItem(currentIndex);
+
+        setInterval(nextItem, 5000);
+
       </script>
 
       <%- include('includes/end.ejs') %>

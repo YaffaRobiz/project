@@ -1,0 +1,67 @@
+<%- include('includes/head.ejs') %>
+    <title>Add MemorE</title>
+    </head>
+
+    <body>
+        <%- include('includes/menu.ejs') %>
+            <h1>הוסף זיכרון</h1>
+            <form action="/memore.js" method="POST">
+                <section class="personal-info">
+                    <div class="block">
+                        <p class="form-header">פרטי הנפטר.ת:</p>
+                        <div class="inline-flx">
+                            <label for="firstName" class="form-label">
+                                שם פרטי:
+                            </label>
+                            <span class="color-red">*</span>
+                            <input type="text" name="firstName" id="firstName" />
+                        </div>
+                        <div class="inline-flx">
+                            <label for="surname" class="form-label">שם משפחה:
+                            </label>
+                            <span class="color-red">*</span>
+                            <input type="text" name="surname" id="surname" />
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="inline-flx">
+                            <label for="dateOfBirth" class="form-label">תאריך לידה:</label>
+                            <span class="color-red">*</span>
+                            <input type="date" required name="dateOfBirth" id="dateOfBirth" class="form-input" />
+                            <label for="dateOfDeath" class="form-label">תאריך פטירה:</label>
+                            <span class="color-red">*</span>
+                            <input type="date" required name="dateOfDeath" id="dateOfDeath" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="inline-flx">
+                            <label for="city" class="form-label">עיר מגורים:</label>
+                            <span class="color-red">*</span>
+                            <input type="city" name="city" id="city" />
+                        </div>
+                        <div class="inline-flx">
+                            <label for="imagePath" class="form-label"> תמונה:</label>
+                            <input type="file" disabled name="imagePath" accept="image/png, image/gif, image/jpeg" id="imagePath" />
+                        </div>
+                    </div>
+
+                    <section class="memore-input-section">
+                        <p class="form-header">הזיכרון שלך:</p>
+                        <div class="inline-flx">
+                            <label for="pname" class="form-label">
+                                ספר.י לנו על הזיכרון שלך:
+                            </label>
+                            <span class="color-red">*</span>
+                        </div>
+                        <div class="textarea">
+                            <textarea id="memoreContent" name="memoreContent"></textarea>
+                        </div>
+                    </section>
+                    <div class="block">
+                        <div class="inline-flx">
+                            <input type="submit" value="שלח טופס" class="btn" name="submit" />
+                            <input type="reset" value="אפס טופס" class="btn" />
+                        </div>
+                    </div>
+            </form>
+            <%- include('includes/end.ejs') %>

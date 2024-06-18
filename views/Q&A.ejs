@@ -4,6 +4,7 @@
 
 <body>
     <%- include('includes/menu.ejs') %>
+    <h1>שאלות ותשובות</h1>
       
     <div id="accordionComponent">
         <button class="accordion">What is Memor-E?</button>
@@ -30,13 +31,13 @@
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
-
+        
         for (i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function () {
                 /* Toggle between adding and removing the "active" class,
                 to highlight the button that controls the panel */
                 this.classList.toggle("active");
-
+        
                 /* Toggle between hiding and showing the active panel */
                 var panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
@@ -46,5 +47,6 @@
                 }
             });
         }
-    </script>
+        
+        </script>
     <%- include('includes/end.ejs') %>
