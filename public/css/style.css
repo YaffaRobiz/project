@@ -114,6 +114,7 @@ form {
 
 .form-header{
   margin-bottom: 1%;
+  margin-top: 1%;
   font-size: 18px;
   font-weight: 700;
 }
@@ -121,22 +122,23 @@ form {
 
 textarea{
   width: 80%;
+  max-width: 90%;
   height: 20vh;
+  max-height: 30vh;
   padding-right: 1%;
 }
 
 .accordion {
-  background-color: rgba(13, 81, 133, 0.6);
+  background-color: rgba(13, 81, 133, 0.451);
   color: #ffff;
   cursor: pointer;
   margin-top: 5px;
   padding: 18px;
   width: 100%;
-  text-align: left;
+  text-align: right;
   border: none;
   outline: none;
   transition: 0.4s;
-  font-family: 'Franklin Gothic Medium';
   border-radius: 5px;
   font-size: 22px;
 
@@ -145,7 +147,6 @@ textarea{
 .active,
 .accordion:hover {
   background-color: #e4e2e2c0;
-  font-family: 'Franklin Gothic Medium';
   color: rgba(13, 81, 133, 0.6);
 }
 
@@ -155,14 +156,11 @@ textarea{
   background-color: white;
   display: none;
   overflow: hidden;
-  font-family: 'Franklin Gothic Medium';
   font-weight: 100;
-
 }
 
 #accordionComponent {
-  margin: 75px;
-
+  margin: 0 75px 0 75px;
 }
 
 #backButton {
@@ -235,6 +233,9 @@ footer {
   font-size: 12px;
 }
 
+.content-margin {
+  margin-right: 10px;
+}
 
 @media (max-width: 768px) {
   .carousel-item {

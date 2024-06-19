@@ -1,0 +1,22 @@
+<%- include('includes/head.ejs') %>
+<title>404</title>
+</head>
+
+<body>
+    <%- include('includes/menu.ejs') %>
+    <div class="content-margin">
+        <h1>שגיאה בהוספת זיכרון!</h1>
+        <div>
+        <p>נא לבדוק את פרטי הזיכרון בשנית.</p>
+        <button id="backButton" class="btn">חזרה</button>
+        <script type="text/javascript">
+            document.getElementById("backButton").onclick = function () {
+                history.back();
+            };
+        </script>
+        </div>
+    </div>
+    <%- include('includes/end.ejs') %>
+
+
+    

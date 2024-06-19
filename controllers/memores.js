@@ -5,14 +5,25 @@ const Memore = require('../models/memore');
 
 app.use(bodyParser.urlencoded({extended:false}));
 
-
 exports.SaveMemore = (req, res, next) => {
-    //save data to database
-    //memore.push(req.body.name);
-    const memore = new Memore(req.body.firstName, req.body.surname,
-         req.body.dateOfBirth, req.body.dateOfDeath, req.body.city, req.body.memoreContent);
-    memore.save().then(() => { res.redirect('/'); }).catch(err => console.log(err));
-}
+    const memore = new Memore(
+        req.body.firstName,
+        req.body.surname,
+        req.body.dateOfBirth,
+        req.body.dateOfDeath,
+        req.body.city,
+        req.body.memoreContent
+    );
+    memore.save()
+        .then(() => {
+            res.redirect('/memore-added');
+        })
+        .catch(err => {
+            res.redirect('/memore-error');
+            // console.error('Error saving memore:', err.message);
+            // res.status(500).send('Error saving memore');
+        });
+};
 
 exports.getIndex=(req,res,next)=>{
     res.render('index');
@@ -32,6 +43,14 @@ exports.getQA=(req,res,next)=>{
 
 exports.getContact=(req,res,next)=>{
     res.render('contact');
+}
+
+exports.getMemoreAdded=(req,res,next)=>{
+    res.render('memore-added');
+}
+
+exports.getMemoreError=(req,res,next)=>{
+    res.render('memore-error');
 }
 
 exports.getError=(req,res,next)=>{
